@@ -26,7 +26,7 @@ app.use(morganLogs);
 app.use(helmet());
 
 //Route
-app.use(router);
+app.use('/api', router);
 
 app.listen(environments.PORT, async () => {
   console.log(`server on port ${environments.PORT}`);

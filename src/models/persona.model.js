@@ -1,6 +1,7 @@
-import { sequelize, DataTypes } from "../config/database.js";
+import { sequelize } from "../config/database.js";
+import { DataTypes } from "sequelize";
 
-export const Persona = sequelize.define(
+const Persona = sequelize.define(
   "Persona",
   {
     persona_id: {
@@ -25,20 +26,22 @@ export const Persona = sequelize.define(
       allowNull: false,
     },
     fecha_nacimiento: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.DATE,
       allowNull: false,
     },
     sexo: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     telefono: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
+    }
   },
   {
     timestamps: true,
     tableName: "personas",
   }
 );
+
+export default Persona;
