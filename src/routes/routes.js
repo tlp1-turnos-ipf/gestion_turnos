@@ -2,28 +2,29 @@ import express from "express";
 import { indexRouter } from "./index.routes.js";
 import { pacienteRouter } from "./paciente.routes.js";
 import { userRouter } from "./user.routes.js";
-
-import { crearPersona } from "../controllers/persona.controller.js";
+import { personaRouter } from "./persona.routes.js";
+import { doctorRouter } from "./doctor.routes.js";
 
 const router = express();
+
+//Auth
 
 //Index
 router.use(indexRouter);
 
+//Personas
+router.use(personaRouter);
+
 //Pacientes
-router.use('/api',pacienteRouter) 
+router.use(pacienteRouter);
 
 //Usuarios
-router.use(userRouter)
-
-
-//Auth
+router.use(userRouter);
 
 //Doctores
-
-//Personas
-router.post("/personas", crearPersona)
+router.use(doctorRouter);
 
 //Administradores
 
+//Export
 export { router };
