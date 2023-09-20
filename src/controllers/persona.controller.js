@@ -1,5 +1,5 @@
-import Persona from "../models/persona.model.js";
-import Usuario from "../models/usuario.model.js";
+import { Persona } from "../models/persona.model.js";
+import { Usuario } from "../models/usuario.model.js";
 
 // Controlador para crear nuevo Persona
 export const crearPersona = async (req, res) => {

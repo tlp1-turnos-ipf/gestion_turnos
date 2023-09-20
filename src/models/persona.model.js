@@ -1,7 +1,7 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
 
-const Persona = sequelize.define(
+export const Persona = sequelize.define(
   "Persona",
   {
     persona_id: {
@@ -43,5 +43,3 @@ const Persona = sequelize.define(
     tableName: "personas",
   }
 );
-
-export default Persona;

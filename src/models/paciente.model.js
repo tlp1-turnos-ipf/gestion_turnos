@@ -1,8 +1,8 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
-import Usuario from "./usuario.model.js";
+import { Usuario } from "./usuario.model.js";
 
-const Paciente = sequelize.define(
+export const Paciente = sequelize.define(
   "Paciente",
   {
     paciente_id: {
@@ -28,5 +28,3 @@ const Paciente = sequelize.define(
 //Realizo la relacion de uno a muchos de la tabla usuario a proyecto
 Usuario.hasMany(Paciente, { foreignKey: "usuario_id", as: "pacientes" });
 Paciente.belongsTo(Usuario, { foreignKey: "usuario_id" });
-
-export default Paciente;

@@ -1,8 +1,8 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
-import Doctor from "./doctor.model.js";
+import { Doctor } from "./doctor.model.js";
 
-const DoctorFecha = sequelize.define(
+export const DoctorFecha = sequelize.define(
   "Doctor_Fecha",
   {
     doctor_fecha_id: {
@@ -50,5 +50,3 @@ const DoctorFecha = sequelize.define(
 Doctor.hasMany(DoctorFecha, { foreignKey: "doctor_id", as: "fechas_doctores" });
 DoctorFecha.belongsTo(Doctor, { foreignKey: "doctor_id" });
 
-
-export default DoctorFecha;

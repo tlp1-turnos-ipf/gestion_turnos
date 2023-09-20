@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
-import Persona from "../models/persona.model.js";
-import Usuario from "../models/usuario.model.js";
+import { Persona } from "../models/persona.model.js";
+import { Usuario } from "../models/usuario.model.js";
 
 // Controlador para crear nuevo usuario
 export const crearUsuarioPaciente = async (req, res) => {
