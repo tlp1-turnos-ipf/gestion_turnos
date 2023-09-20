@@ -1,10 +1,7 @@
 import { sequelize } from "../config/database.js";
-import { DataTypes } from "sequelize";
-<<<<<<< HEAD
-import { Doctor } from "./doctor.model.js";
-=======
+import {DataTypes} from "sequelize";
 import {Doctor} from "./doctor.model.js";
->>>>>>> develop-romero-ezequiel
+
 
 export const DoctorFecha = sequelize.define(
   "Doctor_Fecha",
@@ -53,7 +50,3 @@ export const DoctorFecha = sequelize.define(
 //Realizo la relacion de uno a muchos de la tabla doctor a turno
 Doctor.hasMany(DoctorFecha, { foreignKey: "doctor_id", as: "fechas_doctores" });
 DoctorFecha.belongsTo(Doctor, { foreignKey: "doctor_id" });
-<<<<<<< HEAD
-
-=======
->>>>>>> develop-romero-ezequiel
