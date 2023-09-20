@@ -42,4 +42,8 @@ export const Persona = sequelize.define(
     timestamps: true,
     tableName: "personas",
   }
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> develop-romero-ezequiel

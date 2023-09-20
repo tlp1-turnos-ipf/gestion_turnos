@@ -1,6 +1,11 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
+<<<<<<< HEAD:src/models/truno.model.js
 import { DoctorFecha } from "./doctorFecha.model.js";
+=======
+import {DoctorFecha} from "./doctorFecha.model.js";
+import { Paciente } from "./paciente.model.js";
+>>>>>>> develop-romero-ezequiel:src/models/turno.model.js
 
 export const Turno = sequelize.define(
   "Turno",

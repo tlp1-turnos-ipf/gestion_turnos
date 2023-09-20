@@ -1,6 +1,10 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
+<<<<<<< HEAD
 import { Persona } from "./persona.model.js";
+=======
+import {Persona} from "./persona.model.js";
+>>>>>>> develop-romero-ezequiel
 
 export const Usuario = sequelize.define(
   "Usuario",
@@ -44,4 +48,8 @@ export const Usuario = sequelize.define(
 
 //Realizo la relacion de uno a muchos de la tabla usuario a proyecto
 Persona.hasMany(Usuario, { foreignKey: "persona_id", as: "usuarios" });
+<<<<<<< HEAD
 Usuario.belongsTo(Persona, { foreignKey: "persona_id" });
+=======
+Usuario.belongsTo(Persona, { foreignKey: "persona_id" });
+>>>>>>> develop-romero-ezequiel

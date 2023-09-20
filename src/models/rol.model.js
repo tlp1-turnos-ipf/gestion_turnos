@@ -1,6 +1,10 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
+<<<<<<< HEAD
 import { Usuario } from "./usuario.model.js";
+=======
+import {Usuario} from "./usuario.model.js";
+>>>>>>> develop-romero-ezequiel
 
 export const Rol = sequelize.define(
   "Rol",

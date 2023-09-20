@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
 
 const app = express();
 
@@ -26,7 +26,7 @@ app.use(morganLogs);
 app.use(helmet());
 
 //Route
-app.use('/api', router);
+app.use(router);
 
 app.listen(environments.PORT, async () => {
   console.log(`server on port ${environments.PORT}`);
