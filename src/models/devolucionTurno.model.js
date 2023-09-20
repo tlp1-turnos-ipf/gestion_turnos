@@ -1,8 +1,8 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
-import Turno from "./turno.model.js";
+import {Turno} from "./turno.model.js";
 
-const DevolucionTurno = sequelize.define(
+export const DevolucionTurno = sequelize.define(
   "Devolucion_Turno",
   {
     titulo_turno: {
@@ -27,4 +27,3 @@ const DevolucionTurno = sequelize.define(
 Turno.hasMany(DevolucionTurno, { foreignKey: "turno_id", as: "devolucion_turno" });
 DevolucionTurno.belongsTo(Turno, { foreignKey: "turno_id" });
 
-export default Turno;

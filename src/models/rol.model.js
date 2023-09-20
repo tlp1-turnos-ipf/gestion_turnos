@@ -1,8 +1,8 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
-import Usuario from "./usuario.model.js";
+import {Usuario} from "./usuario.model.js";
 
-const Rol = sequelize.define(
+export const Rol = sequelize.define(
   "Rol",
   {
     descripcion_rol: {
@@ -19,5 +19,3 @@ const Rol = sequelize.define(
 //Realizo la relacion de uno a muchos
 Rol.hasMany(Usuario, { foreignKey: "rol" });
 Usuario.belongsTo(Rol, { foreignKey: "rol" });
-
-export default Rol;
