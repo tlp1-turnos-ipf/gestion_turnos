@@ -12,6 +12,7 @@ export const sequelize = new Sequelize(
   }
 )
 
+// Funcion para la conexion a la base de datos
 export async function startDB () {
   try {
     await sequelize.sync({ force: false })

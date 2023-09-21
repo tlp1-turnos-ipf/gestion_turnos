@@ -125,7 +125,7 @@ export const ctrlGetDoctorById = async (req, res) => {
   }
 };
 
-//Ctrl update User
+//Ctrl update Doctor
 export const ctrlUpdateDoctor = async (req, res) => {
   const user = req.body;
   try {

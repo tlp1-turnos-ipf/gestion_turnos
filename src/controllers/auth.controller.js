@@ -4,6 +4,7 @@ import { environments } from '../config/environments.js'
 import { Usuario } from '../models/usuario.model.js'
 import bcrypt from "bcrypt";
 
+// ctrl Login User
 export const ctrlLoginUser = async (req, res) => {
   try {
     const user = await getUserByEmailAndPassword(req.body)
@@ -17,7 +18,7 @@ export const ctrlLoginUser = async (req, res) => {
   }
 }
 
-// es un controlador que voy a usar para validar si el token es válido.
+// ctrl que valida si el token es válido.
 export const ctrlGetUserInfoByToken = async (req, res) => {
   const token = req.headers.authorization
 
