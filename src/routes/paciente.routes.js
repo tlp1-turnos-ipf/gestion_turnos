@@ -37,4 +37,4 @@ pacienteRouter.put("/api/pacientes/estado/:id", modificarEstadoPaciente);
 //Eliminar un paciente de manera lógica
 pacienteRouter.delete("/api/pacientes/:id", eliminarPaciente);
 
-export default { pacienteRouter };
+export { pacienteRouter };

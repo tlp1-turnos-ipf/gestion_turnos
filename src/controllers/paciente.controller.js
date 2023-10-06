@@ -1,4 +1,4 @@
-import bcrypt from "bcrypt";
+
 import { Persona } from "../models/persona.model.js";
 import { Usuario } from "../models/usuario.model.js";
 import { Paciente } from "../models/paciente.model.js";

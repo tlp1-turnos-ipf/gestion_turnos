@@ -1,7 +1,7 @@
 import { checkSchema } from 'express-validator';
 
 // Se validan los datos de los usuarios
-const validateUser = checkSchema({
+export const validateUser = checkSchema({
   nombre_usuario: {
     notEmpty:{
       errorMessage:"¡El campo Nombre es obligatorio!"
@@ -21,7 +21,7 @@ const validateUser = checkSchema({
 });
 
 // Se validan los datos de las personas
-const validatePerson = checkSchema({
+export const validatePerson = checkSchema({
   nombres: {
     isString: true
   },
@@ -51,7 +51,7 @@ const validatePerson = checkSchema({
 });
 
 // Se validan los datos de las especialidades
-const validateSpecialty = checkSchema({
+export const validateSpecialty = checkSchema({
   descripcion_especialidad: {
     notEmpty: {
       errorMessage: "¡No puedes enviar una especialidad vacia!"
@@ -59,5 +59,3 @@ const validateSpecialty = checkSchema({
   isString: { errorMessage: "¡Solo ingresa letras!"}
   }
 });
-
-export default { validateUser, validatePerson, validateSpecialty }
