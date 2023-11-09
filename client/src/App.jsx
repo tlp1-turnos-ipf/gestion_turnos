@@ -1,10 +1,13 @@
 import { AuthUser } from './context/AuthContext.jsx'
+import { AppRouter } from './routers/AppRouters.jsx'
 
 function App() {
   
 
   return (
-    <Auth
+    <AuthUser>
+      <AppRouter />
+    </AuthUser>
   )
 }
 

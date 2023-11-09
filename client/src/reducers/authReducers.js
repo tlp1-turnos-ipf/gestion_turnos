@@ -1,6 +1,6 @@
-import { typeAuth } from "./../types/type";
+import { typeAuth } from "../types/type";
 
-export const authReducer = (state, action) => {
+export const authReducer = (auth, action) => {
   switch (action.typeAuth) {
     case typeAuth.LOGIN:
       return {
@@ -12,6 +12,6 @@ export const authReducer = (state, action) => {
         isLogged: false,
       };
     default:
-      return state;
+      return auth;
   }
 };

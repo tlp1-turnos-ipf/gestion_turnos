@@ -4,12 +4,12 @@ import { authReducer } from "../reducers/authReducers";
 export const AuthContext = createContext(null);
 
 export const AuthUser = ({children}) => {
-    const [user, dispatchUser] = useReducer(authReducer)
+    const [auth, dispatchAuth] = useReducer(authReducer, { isLogged: false })
 
     return (
         <AuthContext.Provider value = {{
-            user, 
-            dispatchUser
+            auth, 
+            dispatchAuth
         }}>
             {children}
         </AuthContext.Provider>
