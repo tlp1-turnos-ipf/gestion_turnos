@@ -1,0 +1,17 @@
+import { typeAuth } from "./../types/type";
+
+export const authReducer = (state, action) => {
+  switch (action.typeAuth) {
+    case typeAuth.LOGIN:
+      return {
+        ...action.payload,
+        isLogged: true,
+      };
+    case typeAuth.LOGOUT:
+      return {
+        isLogged: false,
+      };
+    default:
+      return state;
+  }
+};

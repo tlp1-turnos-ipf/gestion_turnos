@@ -24,3 +24,4 @@
 ::ffff:127.0.0.1 - - [19/Sep/2023:13:04:07 +0000] "POST /api/pacientes HTTP/1.1" 500 39 "-" "Thunder Client (https://www.thunderclient.com)"
 ::ffff:127.0.0.1 - - [19/Sep/2023:13:04:56 +0000] "POST /api/pacientes HTTP/1.1" 500 39 "-" "Thunder Client (https://www.thunderclient.com)"
 ::ffff:127.0.0.1 - - [19/Sep/2023:13:05:53 +0000] "POST /api/pacientes HTTP/1.1" 201 42 "-" "Thunder Client (https://www.thunderclient.com)"
+::ffff:127.0.0.1 - - [01/Nov/2023:14:59:04 +0000] "GET /api/pacientes/activos HTTP/1.1" 200 2025 "-" "Thunder Client (https://www.thunderclient.com)"

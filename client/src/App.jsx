@@ -1,13 +1,10 @@
+import { AuthUser } from './context/AuthContext.jsx'
+
 function App() {
   
 
   return (
-    <>
-      <div>
-        <h1>React Pag</h1>
-      </div>
-    
-    </>
+    <Auth
   )
 }
 
