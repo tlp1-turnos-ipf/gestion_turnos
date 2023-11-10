@@ -31,14 +31,16 @@ export const FormLogin = () => {
         title: "Excelente",
         text: "Iniciado con éxito",
       });
+
+      const dataRol = await rol();
+
       dispatchAuth({
         type: typeAuth.LOGIN,
         payload: {
           data,
+          dataRol,
         },
       });
-
-      const dataRol = await rol();
 
       reset();
 

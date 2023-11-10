@@ -86,3 +86,7 @@
 ::1 - - [10/Nov/2023:04:22:46 +0000] "GET /rol/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
 ::1 - - [10/Nov/2023:04:24:29 +0000] "POST /auth/login HTTP/1.1" 200 131 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
 ::1 - - [10/Nov/2023:04:24:29 +0000] "GET /rol/user HTTP/1.1" 200 21 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+::1 - - [10/Nov/2023:12:05:15 +0000] "POST /auth/login HTTP/1.1" 500 38 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+::1 - - [10/Nov/2023:12:05:36 +0000] "POST /auth/login HTTP/1.1" 200 131 "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+::1 - - [10/Nov/2023:12:05:36 +0000] "GET /rol/user HTTP/1.1" 304 - "http://localhost:5173/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"
+::1 - - [10/Nov/2023:14:19:48 +0000] "GET / HTTP/1.1" 500 1573 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0"

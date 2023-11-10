@@ -6,6 +6,7 @@ export const AuthContext = createContext(null);
 
 export const AuthUser = ({ children }) => {
   const [auth, dispatchAuth] = useReducer(authReducer, { isLogged: false });
+  console.log("AUTHHH: ", auth);
 
   // Obtiene el token de localStorage al cargar el componente
   useEffect(() => {
@@ -13,9 +14,6 @@ export const AuthUser = ({ children }) => {
     if (token) {
       dispatchAuth({
         type: typeAuth.LOGIN,
-        payload: {
-          token,
-        },
       });
     }
   }, []);

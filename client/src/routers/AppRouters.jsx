@@ -13,7 +13,6 @@ export const AppRouter = () => {
       <Routes>
         {/* Rutas Principal */}
         <Route path="/" element={<PaginaPrincipal />} />
-
         {/* Rutas Públicas */}
         <Route
           path="/auth/*"
