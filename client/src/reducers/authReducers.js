@@ -1,7 +1,7 @@
 import { typeAuth } from "../types/type";
 
 export const authReducer = (auth, action) => {
-  switch (action.typeAuth) {
+  switch (action.type) {
     case typeAuth.LOGIN:
       return {
         ...action.payload,
