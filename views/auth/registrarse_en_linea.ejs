@@ -1,0 +1,188 @@
+<%- include("../partials/header_principal.ejs") -%>
+
+<main>
+  <section class="container-fluid fondo">
+    <div class="fondo2">
+      <div class="container px-4 py-5">
+        <form
+          class="p-1 p-md-4 border rounded-3 bg-white"
+          id="formNuevoPaciente"
+        >
+          <div class="m-1 fw-bold d-flex justify-content-center border-bottom">
+            <p class="fs-5">
+              <img
+                src="img/inicio_sesion/logo.png"
+                alt=""
+                width="30px"
+              />Registrarse
+            </p>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="text"
+                class="form-control border-secondary"
+                id="nombres"
+                placeholder="juan"
+                name="nombre"
+                required
+              />
+              <label for="nombre" class="mx-1">Nombres</label>
+            </div>
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="text"
+                class="form-control border-secondary"
+                id="apellidos"
+                placeholder="Perez"
+                name="apellido"
+                required
+              />
+              <label for="apellido" class="mx-1">Apellidos</label>
+            </div>
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="date"
+                class="form-control border-secondary"
+                id="fecha_nac"
+                placeholder="00/00/0000"
+                name="fecha_nac"
+                required
+              />
+              <label for="fecha" class="mx-1">Fecha de Nacimiento</label>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="number"
+                class="form-control border-secondary"
+                id="dni"
+                placeholder=""
+                name="dni"
+                required
+              />
+              <label for="dni" class="mx-1">DNI</label>
+            </div>
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="text"
+                class="form-control border-secondary"
+                id="direccion"
+                placeholder="mz 71 cs 30"
+                name="direccion"
+                required
+              />
+              <label for="direccion" class="mx-1">Dirección</label>
+            </div>
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="number"
+                class="form-control border-secondary"
+                id="telefono"
+                placeholder="3704332211"
+                name="telefono"
+                required
+              />
+              <label for="telefono" class="mx-1">Telefóno</label>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col form-floating m-1 inputForm">
+              <select
+                name="sexo"
+                id="sexo"
+                class="form-select border-secondary"
+                aria-label="Sexos"
+                required
+              >
+                <option value="#">Elegir el Sexo</option>
+                <option value="1">Masculino</option>
+                <option value="2">Femenino</option>
+                <option value="3">Otros</option>
+              </select>
+            </div>
+
+            <div class="col form-floating m-1 inputForm">
+              <select
+                name="discapacidad"
+                id="discapacidad"
+                class="form-select border-secondary"
+                aria-label="discapacidad"
+                required
+              >
+                <option value="#">Posee alguna discapacidad?</option>
+                <option value="1">Si</option>
+                <option value="2">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="m-1 fw-bold d-flex justify-content-center border-bottom">
+            <p class="fs-5">Cuenta</p>
+          </div>
+          <div class="row">
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="text"
+                class="form-control border-secondary"
+                id="nombre_usuario"
+                placeholder="3704332211"
+                name="nombre_usuario"
+                required
+              />
+              <label for="nombre_usuario" class="mx-1">Nombre de Usuario</label>
+            </div>
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="email"
+                class="form-control border-secondary"
+                id="email"
+                placeholder="example@gmail.com"
+                name="email"
+                required
+              />
+              <label for="email" class="mx-1">Email</label>
+            </div>
+            <div class="col form-floating m-1 inputForm">
+              <input
+                type="password"
+                class="form-control border-secondary"
+                id="password"
+                placeholder="3704332211"
+                name="password"
+                required
+              />
+              <label for="password" class="mx-1">Contraseña</label>
+            </div>
+
+            <div class="col form-floating m-1 inputForm mb-2">
+              <input
+                type="password"
+                class="form-control border-secondary"
+                id="confirmPassword"
+                placeholder="3704332211"
+                name="confirmPassword"
+                required
+              />
+              <label for="confirmPassword" class="mx-1"
+                >Confirmar Contraseña</label
+              >
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">
+              Continuar
+            </button>
+
+            <hr class="my-4" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="/js/pacientes/registrarse_en_linea.js"></script>
+
+<%- include("../partials/footer_principal.ejs") -%>
