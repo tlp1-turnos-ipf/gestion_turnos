@@ -11,6 +11,7 @@ export const AuthUser = ({ children }) => {
   // Obtiene el token de localStorage al cargar el componente
   useEffect(() => {
     const token = localStorage.getItem("token");
+
     if (token) {
       dispatchAuth({
         type: typeAuth.LOGIN,
