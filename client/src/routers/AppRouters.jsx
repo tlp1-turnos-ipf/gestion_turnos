@@ -5,14 +5,14 @@ import { PrivateRoutes } from "./PrivateRoutes";
 import { HomeRoutes } from "../routes/HomeRoutes";
 import { PageNotFound } from "../pages/PageNotFound";
 import { Register } from "../pages/auth/Register";
-import { PaginaPrincipal } from "../pages/PaginaPrincipal";
+import { Index } from "../pages";
 
 export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
         {/* Rutas Principal */}
-        <Route path="/" element={<PaginaPrincipal />} />
+        <Route path="/" element={<Index />} />
         {/* Rutas Públicas */}
         <Route
           path="/auth/*"
