@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 export const PaginaPrincipal = () => {
+  const { auth } = useContext(AuthContext);
+
   return (
     <main>
       <section className="container-fluid fondo">
@@ -13,24 +18,27 @@ export const PaginaPrincipal = () => {
                   Te damos la bienvenida a nuestra aplicación web. Estamos
                   mejorando constantemente la eficacia para su usabilidad.
                 </p>
-                <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <a href="/login">
-                    <button
-                      type="button"
-                      className="btn btn-primary btn-lg px-4 me-md-2"
-                    >
-                      Iniciar Sesión
-                    </button>
-                  </a>
-                  <a href="/register">
-                    <button
-                      type="button"
-                      className="btn btn-outline-secondary btn-lg px-4 text-light"
-                    >
-                      Registrarse
-                    </button>
-                  </a>
-                </div>
+                {auth && !auth.isLogged && (
+                  <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <Link to="/auth/login">
+                      <button
+                        type="button"
+                        className="btn btn-primary btn-lg px-4 me-md-2"
+                      >
+                        Iniciar Sesión
+                      </button>
+                    </Link>
+
+                    <Link to="/auth/register">
+                      <button
+                        type="button"
+                        className="btn btn-outline-secondary btn-lg px-4 text-light"
+                      >
+                        Registrarse
+                      </button>
+                    </Link>
+                  </div>
+                )}
               </section>
               <section className="col-10 col-sm-8 col-lg-6 rounded mt-3">
                 <img

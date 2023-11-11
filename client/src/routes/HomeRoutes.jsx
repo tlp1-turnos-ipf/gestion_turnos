@@ -1,8 +1,14 @@
 import { Route, Routes } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { PrincipalPaciente } from "../components/main/PrincipalPaciente";
+import { PrincipalAdmin } from "../components/main/PrincipalAdmin";
+import { PrincipalDoctor } from "../components/main/PrincipalDoctor";
 
 export const HomeRoutes = () => {
-  const { auth } = useContext(AuthContext);
-  return <Routes></Routes>;
+  return (
+    <Routes>
+      <Route path="/paciente" element={<PrincipalPaciente />} />
+      <Route path="/administrador" element={<PrincipalAdmin />} />
+      <Route path="/doctor" element={<PrincipalDoctor />} />
+    </Routes>
+  );
 };

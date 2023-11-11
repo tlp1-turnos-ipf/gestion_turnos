@@ -11,8 +11,6 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Rutas Principal */}
-        <Route path="/" element={<Index />} />
         {/* Rutas Públicas */}
         <Route
           path="/auth/*"
@@ -35,6 +33,9 @@ export const AppRouter = () => {
             </PrivateRoutes>
           }
         />
+
+        {/* Rutas Principal */}
+        <Route path="/" element={<Index />} />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>
