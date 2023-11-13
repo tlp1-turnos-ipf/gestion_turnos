@@ -26,7 +26,7 @@ pacienteRouter.get("/api/pacientes/completos", obtenerPacientesCompleto);
 pacienteRouter.get("/api/pacientes/:id", obtenerPaciente);
 
 //Crear Paciente
-pacienteRouter.post("/api/pacientes", crearPaciente);
+pacienteRouter.post("/api/paciente", crearPaciente);
 
 //Modificar Paciente
 pacienteRouter.put("/api/pacientes/:id", modificarPaciente);

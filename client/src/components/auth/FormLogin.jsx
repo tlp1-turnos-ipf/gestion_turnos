@@ -67,7 +67,7 @@ export const FormLogin = () => {
                 >
                   <div className="m-3 text-center fw-bold d-flex justify-content-center align-items-center border-bottom">
                     <img
-                      src="img/inicio_sesion/logo.png"
+                      src="/img/inicio_sesion/logo.png"
                       alt=""
                       width="100px"
                     />

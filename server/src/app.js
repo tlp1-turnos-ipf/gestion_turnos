@@ -3,8 +3,14 @@ import cors from "cors";
 import helmet from "helmet";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
+//Socket
+import { createServer } from "http";
+import { Server as SocketServer } from "socket.io";
 
 const app = express();
+
+const httpServer = createServer(app);
+const io = new SocketServer(httpServer);
 
 // Archivos estáticos utilizando la librería path que viene en NodeJS
 
@@ -28,7 +34,7 @@ app.use(helmet());
 //Route
 app.use(router);
 
-app.listen(environments.PORT, async () => {
+httpServer.listen(environments.PORT, async () => {
   console.log(`server on port ${environments.PORT}`);
   startDB();
 });
