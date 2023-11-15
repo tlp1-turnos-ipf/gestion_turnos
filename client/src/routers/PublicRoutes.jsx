@@ -6,5 +6,5 @@ export const PublicRoutes = ({ children }) => {
   // Acceder a la información del contexto
   const { auth } = useContext(AuthContext);
 
-  return !auth.isLogged ? children : <Navigate to={"/paciente"} />;
+  return !auth.isLogged ? children : <Navigate to={auth.dataRol} />;
 };
