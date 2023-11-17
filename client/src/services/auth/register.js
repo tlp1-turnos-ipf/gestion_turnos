@@ -1,5 +1,3 @@
-import { login } from "./login";
-
 export const register = async (datos) => {
   //Verifica que las contraseñas coincidan
   if (datos.password !== datos.confirmPassword) {

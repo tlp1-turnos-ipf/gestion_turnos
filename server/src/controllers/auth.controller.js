@@ -1,7 +1,6 @@
 import bcrypt from "bcrypt";
 import { Usuario } from "../models/usuario.model.js";
 import { generarJWT } from "../helpers/generar_jwt.js";
-import cookieParser from "cookie-parser";
 
 export const ctrlLoginUser = async (req, res) => {
   const { email, password } = req.body;
@@ -27,8 +26,6 @@ export const ctrlLoginUser = async (req, res) => {
 
     // Generar el JWT
     const token = await generarJWT({ user: user.usuario_id });
-    console.log(token);
-    console.log(user);
 
     if (!token) {
       return res.status(400).json({
@@ -36,15 +33,11 @@ export const ctrlLoginUser = async (req, res) => {
       });
     }
 
-    // res.cookie("id", user.usuario_id);
-    // res.cookie("rol", user.rol);
-    // res.cookie("name", user.nombre_usuario);
-
-    res.status(200).json(token);
+    return res.json({ token, user });
   } catch (error) {
     console.log(error);
     res.status(500).json({
-      message: "Error al iniciar sesión",
+      message: "Error interno del servidor",
     });
   }
 };

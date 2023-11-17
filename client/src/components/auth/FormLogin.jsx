@@ -1,13 +1,11 @@
 import { useContext } from "react";
 import { useForm } from "../../hooks/auth/useForm";
 import { AuthContext } from "../../context/AuthContext";
-import { typeAuth } from "../../types/type";
-import { login } from "../../services/auth/login";
 import { useNavigate } from "react-router-dom";
-import { rol } from "../../services/auth/rol";
+import { fetchAuth } from "../../api/authApi";
 
 export const FormLogin = () => {
-  const { dispatchAuth } = useContext(AuthContext);
+  const { login } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -24,32 +22,30 @@ export const FormLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const data = await login(datos);
+    const data = await fetchAuth("auth/login", "POST", datos);
+
+    if (data.user) {
+      // Se dispara la acción para modificar el estado global
+      login(data);
+
+      // Persistencia
+      localStorage.setItem("user", JSON.stringify(data.user));
+      localStorage.setItem("token", data.token.token);
+
       Swal.fire({
         icon: "success",
         title: "Excelente",
         text: "Iniciado con éxito",
       });
 
-      const dataRol = await rol();
-
-      dispatchAuth({
-        type: typeAuth.LOGIN,
-        payload: {
-          data,
-          dataRol,
-        },
-      });
-
       reset();
 
-      navigate(dataRol);
-    } catch (error) {
+      return navigate("dashboard/");
+    } else {
       Swal.fire({
         icon: "warning",
         title: "Oops...",
-        text: error.message,
+        text: data.message,
       });
     }
   };

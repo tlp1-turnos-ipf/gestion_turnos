@@ -5,16 +5,53 @@ import { typeAuth } from "../types/type";
 export const AuthContext = createContext(null);
 
 export const AuthUser = ({ children }) => {
-  const [auth, dispatchAuth] = useReducer(authReducer, { isLogged: false });
+  //Obtiene el token si es que hay
+  const token = localStorage.getItem("token") ?? null;
+
+  //UseReducer para almacenar
+  const [auth, dispatchAuth] = useReducer(authReducer, {
+    isLogged: false,
+    token,
+    user: JSON.parse(localStorage.getItem("user")) ?? null,
+  });
   console.log("AUTHHH: ", auth);
 
+  //Verifica que si hay token, lo agregar al dispatch
+  useEffect(() => {
+    if (auth.token) {
+      login(auth);
+    }
+  }, [auth]);
+
+  //Para cambiar el estado del login
+  const login = (data) => {
+    dispatchAuth({
+      type: typeAuth.LOGIN,
+      payload: {
+        data,
+      },
+    });
+  };
+
+  //Para salir del sistema
+  const logout = () => {
+    dispatchAuth({
+      type: typeAuth.LOGOUT,
+    });
+  };
+
   // Obtiene el token de localStorage al cargar el componente
+  const isAuth = () => {
+    return token ?? null;
+  };
 
   return (
     <AuthContext.Provider
       value={{
         auth,
-        dispatchAuth,
+        login,
+        logout,
+        isAuth,
       }}
     >
       {children}
