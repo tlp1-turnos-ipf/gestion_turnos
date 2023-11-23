@@ -1,9 +1,9 @@
 import { User } from "./User";
 import { AddBoton } from "./botons/AddBoton";
-import { FilterPaciente } from "./filters/FilterPaciente";
-import { ListPatients } from "./lists/ListPatients";
+import { FilterEspeciality } from "./filters/FilterEspeciality";
+import { ListEspeciality } from "./lists/ListEspeciality";
 
-export const AppPatients = () => {
+export const AppEspeciality = () => {
   return (
     <section
       className="w-100"
@@ -11,10 +11,10 @@ export const AppPatients = () => {
     >
       <User />
       <div className="my-3 shadow p-3 m-5 bg-body rounded border d-flex flex-wrap justify-content-between">
-        <AddBoton route={"/patients/create"}>Agregar Paciente</AddBoton>
-        <FilterPaciente />
+        <AddBoton route={"/especiality/create"}>Agregar Especialidad</AddBoton>
+        <FilterEspeciality />
       </div>
-      <ListPatients />
+      <ListEspeciality />
     </section>
   );
 };

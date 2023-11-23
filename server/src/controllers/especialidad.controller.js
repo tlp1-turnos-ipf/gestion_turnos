@@ -1,8 +1,7 @@
 import { Especialidad } from "../models/especialidad.model.js";
-import { ctrlEspecialidadGetById } from "./especialidad.controller";
 
 //Obtener todas las especialidades
-export const ctrlGetAllEspecialidad = async (res, req) => {
+export const ctrlGetAllEspecialidad = async (req, res) => {
   try {
     const Especialidades = await Especialidad.findAll();
 
@@ -16,7 +15,7 @@ export const ctrlGetAllEspecialidad = async (res, req) => {
     res.status(200).json(Especialidades);
   } catch (error) {
     console.log("error: " + error.message);
-    res.sendStatus(500).json({ message: "Error del servidor" });
+    res.status(500).json({ message: "Error del servidor" });
   }
 };
 
@@ -34,7 +33,7 @@ export const ctrlCreateEspecialidad = async (req, res) => {
     res.status(201).json({ message: "Especialidad Creado Exitosamente" });
   } catch (error) {
     console.log("error: " + error.message);
-    res.sendStatus(500).json({ message: "Error del servidor" });
+    res.status(500).json({ message: "Error del servidor" });
   }
 };
 
@@ -54,7 +53,7 @@ export const ctrlEspecialidadGetById = async (req, res) => {
     return res.status(200).json(especialidad);
   } catch (error) {
     console.log("error: " + error.message);
-    res.sendStatus(500).json({ message: "Error del servidor" });
+    res.status(500).json({ message: "Error del servidor" });
   }
 };
 
@@ -79,15 +78,15 @@ export const ctrlEspecialidadUpdateById = async (req, res) => {
     });
   } catch (error) {
     console.log("error: " + error.message);
-    res.sendStatus(500).json({ message: "Error del servidor" });
+    res.status(500).json({ message: "Error del servidor" });
   }
 };
 
 export const ctrlDeleteEspecialidad = async (req, res) => {
   try {
-    const user = await Especialidad.findByPk(req.params.id);
+    const esp = await Especialidad.findByPk(req.params.id);
 
-    const deleteEspecialidad = await Especialidad.destroy(user);
+    const deleteEspecialidad = await Especialidad.destroy(esp);
 
     if (!deleteEspecialidad) {
       throw {
@@ -102,6 +101,6 @@ export const ctrlDeleteEspecialidad = async (req, res) => {
     });
   } catch (error) {
     console.log("error: " + error.message);
-    res.sendStatus(500).json({ message: "Error del servidor" });
+    res.status(500).json({ message: "Error del servidor" });
   }
 };

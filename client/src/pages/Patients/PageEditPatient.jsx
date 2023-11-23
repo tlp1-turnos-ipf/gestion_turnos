@@ -1,6 +1,6 @@
-import { AppEditPatient } from "../components/AppEditPatient";
-import { AsideBurgerAdmin } from "../components/asideBurger/AsideBurgerAdmin";
-import { NavBarAdmin } from "../components/navBar/NavBarAdmin";
+import { AppEditPatient } from "../../components/AppEditPatient";
+import { AsideBurgerAdmin } from "../../components/asideBurger/AsideBurgerAdmin";
+import { NavBarAdmin } from "../../components/navBar/NavBarAdmin";
 
 export const PageEditPatient = () => {
   return (

@@ -17,7 +17,7 @@ export const BotonsAdmin = [
     src: "/img/admin/especialidades.png",
     width: "80px",
     style: { position: "absolute", top: "-5px", left: 6 },
-    to: "/lista_doctores",
+    to: "/especiality",
     title: "Especialidad",
   },
   {

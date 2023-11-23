@@ -16,7 +16,7 @@ especialidadRoutes.get("/api/especialidad", ctrlGetAllEspecialidad);
 especialidadRoutes.get("/api/especialidad/:id", ctrlEspecialidadGetById);
 
 //Create una especialidad
-especialidadRoutes.create("/api/especialidad", ctrlCreateEspecialidad);
+especialidadRoutes.post("/api/especialidad", ctrlCreateEspecialidad);
 
 // Modificar especialidad
 especialidadRoutes.put("/api/especialidad/:id", ctrlEspecialidadUpdateById);

@@ -1,4 +1,5 @@
 import { AuthUser } from "./context/AuthContext.jsx";
+import { ContextEspeciality } from "./context/EspecilityContext.jsx";
 import { ContextPatient } from "./context/PatientContext.jsx";
 import { SocketProvider } from "./context/SocketProvider.jsx";
 import { AppRouter } from "./routers/AppRouters.jsx";
@@ -8,7 +9,9 @@ function App() {
     <AuthUser>
       <SocketProvider>
         <ContextPatient>
-          <AppRouter />
+          <ContextEspeciality>
+            <AppRouter />
+          </ContextEspeciality>
         </ContextPatient>
       </SocketProvider>
     </AuthUser>

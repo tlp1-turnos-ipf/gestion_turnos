@@ -1,13 +1,14 @@
 import { useContext, useEffect } from "react";
-import { AppPatients } from "../components/AppPatients";
+import { EspecialityContext } from "../context/EspecilityContext";
 import { AsideBurgerAdmin } from "../components/asideBurger/AsideBurgerAdmin";
 import { NavBarAdmin } from "../components/navBar/NavBarAdmin";
-import { PatientContext } from "../context/PatientContext";
+import { AppEspeciality } from "../components/AppEspeciality";
 
-export const PagePatients = () => {
-  const { fetchData } = useContext(PatientContext);
+export const PageEspecility = () => {
+  const { fetchGetAllEspeciality } = useContext(EspecialityContext);
+
   useEffect(() => {
-    fetchData(); // Llamamos a la función asíncrona cuando el componente se monta
+    fetchGetAllEspeciality(); // Llamamos a la función asíncrona cuando el componente se monta
   }, []); // El array vacío asegura que useEffect se ejecute solo una vez al montar el componente
 
   return (
@@ -16,7 +17,7 @@ export const PagePatients = () => {
       <main className="container-fluid m-0 p-0">
         <div className="d-flex">
           <NavBarAdmin />
-          <AppPatients />
+          <AppEspeciality />
         </div>
       </main>
     </>

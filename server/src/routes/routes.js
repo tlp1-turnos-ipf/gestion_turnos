@@ -5,6 +5,7 @@ import { userRouter } from "./user.routes.js";
 import { personaRouter } from "./persona.routes.js";
 import { doctorRouter } from "./doctor.routes.js";
 import { authRouter } from "./auth.routes.js";
+import { especialidadRoutes } from "./especialidad.routes.js";
 
 const router = express();
 
@@ -27,6 +28,9 @@ router.use(userRouter);
 router.use(doctorRouter);
 
 //Administradores
+
+//Especialidades
+router.use(especialidadRoutes);
 
 //Export
 export { router };
