@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const NavBarAdmin = () => {
   return (
     <>
@@ -13,8 +14,8 @@ export const NavBarAdmin = () => {
           className="d-flex flex-column flex-shrink-0 px-3"
           style={{ width: 240, height: "100vh", display: "none" }}
         >
-          <a
-            href="/administrador"
+          <Link
+            to="/dashboard"
             className="d-flex align-items-center text-white text-decoration-none border-bottom py-2"
           >
             <img
@@ -23,7 +24,7 @@ export const NavBarAdmin = () => {
               width="70px"
             />
             <span className="fs-4">San Antonio</span>
-          </a>
+          </Link>
           <hr />
           <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item py-1">

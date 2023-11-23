@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BotonsAdmin } from "../../assets/js/botons";
 import { User } from "../User";
 export const NavWindowAdmin = () => {
@@ -15,7 +16,7 @@ export const NavWindowAdmin = () => {
         </h3>
         <div className="row">
           {BotonsAdmin.map((boton, index) => (
-            <div key={index} className="col-sm-6 mb-6 mb-sm-0">
+            <div key={index} className="col-lg-6 mb-6 mb-sm-0">
               <div className="card m-2 shadow rounded border">
                 <img
                   src={boton.src}
@@ -23,11 +24,11 @@ export const NavWindowAdmin = () => {
                   width={boton.width}
                   style={boton.style}
                 />
-                <a href={boton.to} className="btn">
+                <Link to={boton.to} className="btn">
                   <div className="card-body">
                     <p className="card-title text-center">{boton.title}</p>
                   </div>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

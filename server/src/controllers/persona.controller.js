@@ -64,9 +64,12 @@ export const crearPersona = async (req, res) => {
     }
 
     // Se retorna la respuesta al cliente
-    return res.status(201).json({ message: "Registrado correctamente" });
+    return res.json({
+      person: nuevoPersona,
+      message: "Registrado correctamente",
+    });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ message: "Error al crear la persona" });
+    return res.status(500).json({ message: "Error interno en el servidor" });
   }
 };

@@ -6,6 +6,7 @@ import { HomeRoutes } from "../routes/HomeRoutes";
 import { PageNotFound } from "../pages/PageNotFound";
 import { Register } from "../pages/auth/Register";
 import { Index } from "../pages";
+import { AdminRoutes } from "./AdminRoutes";
 
 export const AppRouter = () => {
   return (
@@ -30,12 +31,20 @@ export const AppRouter = () => {
           element={
             <PrivateRoutes>
               <HomeRoutes />
+              <AdminRoutes />
             </PrivateRoutes>
           }
         />
 
-        {/* Rutas Principal */}
-        <Route path="/" element={<Index />} />
+        {/* Ruta Principal */}
+        <Route
+          path="/"
+          element={
+            <PublicRoutes>
+              <Index />
+            </PublicRoutes>
+          }
+        />
 
         <Route path="*" element={<PageNotFound />} />
       </Routes>

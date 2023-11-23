@@ -86,7 +86,6 @@ export const FormRegister = () => {
                     type="text"
                     className="form-control border-secondary"
                     id="apellidos"
-                    placeholder="Perez"
                     name="apellidos"
                     required
                     value={datos.apellidos}
@@ -170,7 +169,7 @@ export const FormRegister = () => {
                     onChange={handleInputChange}
                     value={datos.sexo}
                   >
-                    <option value="#">Elegir el Sexo</option>
+                    <option value="">Elegir el Sexo</option>
                     <option value={1}>Masculino</option>
                     <option value={2}>Femenino</option>
                     <option value={3}>Otros</option>
