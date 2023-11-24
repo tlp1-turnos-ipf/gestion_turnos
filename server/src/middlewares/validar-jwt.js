@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken";
-import { environments } from "../config/environments";
+import { environments } from "../config/environments.js";
 
-//Validar JWT
 export const validarJWT = (req, res, next) => {
   // Leer el token
   const token = req.headers("Authorization");
@@ -9,7 +8,7 @@ export const validarJWT = (req, res, next) => {
   if (!token) {
     return res.status(401).json({
       ok: false,
-      message: "No hay token en la petición",
+      msg: "No hay token en la petición",
     });
   }
 
@@ -22,18 +21,17 @@ export const validarJWT = (req, res, next) => {
     console.log(error);
     return res.status(401).json({
       ok: false,
-      message: "Token no válido",
+      msg: "Token no válido",
     });
   }
 };
 
-//Validación del token
 export const validarJWTWebsocket = (token) => {
   try {
-    const { uid } = jwt.verify(token, environments.SECRET);
+    const { user } = jwt.verify(token, environments.SECRET);
 
-    if (uid) {
-      return [true, uid];
+    if (user) {
+      return [true, user];
     }
   } catch (error) {
     console.log(error);

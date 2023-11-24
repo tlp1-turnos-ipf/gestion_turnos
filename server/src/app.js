@@ -24,6 +24,8 @@ import { morganLogs } from "./middlewares/morganMiddleware.js";
 import { startDB } from "./config/database.js";
 import { environments } from "./config/environments.js";
 import { router } from "./routes/routes.js";
+import { usuarioConectado } from "./controllers/sockets.controllers.js";
+import { validarJWTWebsocket } from "./middlewares/validar-jwt.js";
 
 //Middlewares
 app.use(express.json());
@@ -33,6 +35,24 @@ app.use(helmet());
 
 //Route
 app.use(router);
+
+// Websocket events
+io.on("connection", async (socket) => {
+  const [isValid, user] = validarJWTWebsocket(
+    socket.handshake.query["authorization"]
+  );
+
+  if (!isValid) {
+    socket.disconnect();
+    return console.log("Usuario no identificado", user);
+  }
+
+  const infoUser = await usuarioConectado(user);
+
+  // Agregar el usuario conectado a la lista de usuarios
+  console.log("Usuario conectado", infoUser.nombre_usuario);
+  io.emit("usuario-conectado", user);
+});
 
 httpServer.listen(environments.PORT, async () => {
   console.log(`server on port ${environments.PORT}`);

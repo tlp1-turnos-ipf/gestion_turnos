@@ -1,14 +1,20 @@
-import { createContext } from "react";
+import { createContext, useContext, useEffect } from "react";
 import { useSocket } from "../hooks/useSocket";
+import { AuthContext } from "./AuthContext";
 
 export const SocketContext = createContext();
 
 export const SocketProvider = ({ children }) => {
-  // Se comprueba si el usuario está conectado o no
+  const { auth } = useContext(AuthContext);
 
-  const { socket, online, conectarSocket, desconectarSocket } = useSocket(
-    "http://localhost:3000"
-  );
+  const { socket, online, conectarSocket } = useSocket("http://localhost:3000");
+
+  // Si el usuario se loguea, se conecta al socket
+  useEffect(() => {
+    if (auth.isLogged) {
+      conectarSocket();
+    }
+  }, [auth.isLogged, conectarSocket]);
 
   return (
     <SocketContext.Provider
@@ -16,7 +22,6 @@ export const SocketProvider = ({ children }) => {
         socket,
         online,
         conectarSocket,
-        desconectarSocket,
       }}
     >
       {children}
