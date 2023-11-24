@@ -7,7 +7,7 @@ export const SocketContext = createContext();
 export const SocketProvider = ({ children }) => {
   const { auth } = useContext(AuthContext);
 
-  const { socket, online, conectarSocket } = useSocket("http://localhost:3000");
+  const { socket, conectarSocket } = useSocket("http://localhost:3000");
 
   // Si el usuario se loguea, se conecta al socket
   useEffect(() => {
@@ -20,7 +20,6 @@ export const SocketProvider = ({ children }) => {
     <SocketContext.Provider
       value={{
         socket,
-        online,
         conectarSocket,
       }}
     >

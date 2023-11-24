@@ -1,9 +1,8 @@
 import { useForm } from "../../hooks/auth/useForm";
 import { useNavigate } from "react-router-dom";
-import { register } from "../../services/auth/register";
-import { fetchPerson } from "./../../api/personApi";
-import { fetchPatient } from "./../../api/patientApi";
-import { fetchUser } from "./../../api/userApi";
+import { fetchPerson } from "../../api/personApi";
+import { fetchPatient } from "../../api/patientApi";
+import { fetchUser } from "../../api/userApi";
 
 export const FormRegister = () => {
   const navigate = useNavigate();
@@ -41,7 +40,7 @@ export const FormRegister = () => {
         title: "Excellent",
         text: dataPatient.message,
       });
-      navigate("/patients");
+      navigate("/auth/login");
       reset();
     } else {
       Swal.fire({
