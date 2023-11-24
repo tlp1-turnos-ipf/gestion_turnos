@@ -1,6 +1,9 @@
 import { useForm } from "../../hooks/auth/useForm";
 import { useNavigate } from "react-router-dom";
 import { register } from "../../services/auth/register";
+import { fetchPerson } from "./../../api/personApi";
+import { fetchPatient } from "./../../api/patientApi";
+import { fetchUser } from "./../../api/userApi";
 
 export const FormRegister = () => {
   const navigate = useNavigate();
@@ -28,24 +31,23 @@ export const FormRegister = () => {
   // Envío de datos al servidor
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const dataPerson = await fetchPerson("api/persona", "POST", datos);
 
-    try {
-      await register(datos);
+    if (dataPerson.person) {
+      await fetchUser("api/user", "POST", datos);
+      const dataPatient = await fetchPatient("api/paciente", "POST", datos);
       Swal.fire({
         icon: "success",
-        title: "Excelente",
-        text: "Registrado con éxito",
+        title: "Excellent",
+        text: dataPatient.message,
       });
-
+      navigate("/patients");
       reset();
-
-      navigate("/auth/login");
-      reset();
-    } catch (error) {
+    } else {
       Swal.fire({
         icon: "warning",
         title: "Oops...",
-        text: error.message,
+        text: dataPerson.message,
       });
     }
   };
