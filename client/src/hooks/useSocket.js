@@ -1,44 +1,40 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
-import io from 'socket.io-client';
+import { useCallback, useEffect, useState } from "react";
+import io from "socket.io-client";
 
+export const useSocket = (serverPath) => {
+  const [socket, setSocket] = useState(null);
+  const [online, setOnline] = useState(false);
 
-export const useSocket = ( serverPath ) => {
-    
-    // const socket = useMemo(() => io.connect( serverPath, {transports: ['websocket']} ), [ serverPath ] );
+  const conectarSocket = useCallback(() => {
+    const socketTemp = io.connect(serverPath, {
+      transports: ["websocket"],
+      autoConnect: true,
+      forceNew: true,
+    });
 
-    const [socket, setSocket] = useState(null)
-    const [ online, setOnline ] = useState(false);
+    setSocket(socketTemp);
+  }, [serverPath]);
 
-    const conectarSocket = useCallback(() => {
-        const socketTemp = io.connect( serverPath, {
-            transports: ['websocket'],
-            autoConnect: true,
-            forceNew: true
-        } );
+  const desconectarSocket = useCallback(() => {
+    socket?.disconnect();
+  }, [socket]);
 
-        setSocket( socketTemp );
-    }, [serverPath]);
+  useEffect(() => {
+    setOnline(socket?.connected);
+  }, [socket]);
 
-    const desconectarSocket = useCallback(() => {
-        socket?.disconnect();
-    }, [ socket ]);
+  useEffect(() => {
+    socket?.on("connect", () => setOnline(true));
+  }, [socket]);
 
-    useEffect(() => {
-        setOnline( socket?.connected );
-    }, [socket])
+  useEffect(() => {
+    socket?.on("disconnect", () => setOnline(false));
+  }, [socket]);
 
-    useEffect(() => {
-        socket?.on('connect', () => setOnline( true ));
-    }, [ socket ])
-
-    useEffect(() => {
-        socket?.on('disconnect', () => setOnline( false ));
-    }, [ socket ])
-
-    return {
-        socket,
-        online,
-        conectarSocket,
-        desconectarSocket
-    }
-}
+  return {
+    socket,
+    online,
+    conectarSocket,
+    desconectarSocket,
+  };
+};

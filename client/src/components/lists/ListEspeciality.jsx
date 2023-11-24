@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { EspecialityContext } from "../../context/EspecilityContext";
 import { fetchPatient } from "../../api/patientApi";
+import { AddBoton } from "./../botons/AddBoton";
 
 export const ListEspeciality = () => {
   const { especialities, deleteEsp } = useContext(EspecialityContext);
@@ -67,17 +68,11 @@ export const ListEspeciality = () => {
                   >
                     Eliminar
                   </button>
-                  <button
-                    // onClick={() =>
-                    //   navigate(
-                    //     "/especiality/edit/" +
-                    //       patient.Usuario.Persona.persona_id
-                    //   )
-                    // }
-                    className="btn btn-warning btn-sm"
+                  <AddBoton
+                    route={`api/especialidad/${especiality.especialidad_id}`}
                   >
                     Editar
-                  </button>
+                  </AddBoton>
                 </td>
               </tr>
             ))

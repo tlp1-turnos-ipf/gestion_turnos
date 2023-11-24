@@ -35,3 +35,8 @@ export const crearUsuario = async (req, res) => {
     });
   }
 };
+
+export const usuarioConectado = async (uid) => {
+  const user = Usuario.findOne(uid, { online: true });
+  return user;
+};
