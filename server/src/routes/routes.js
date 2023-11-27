@@ -5,10 +5,7 @@ import { userRouter } from "./user.routes.js";
 import {personaRouter} from "./persona.routes.js";
 import { doctorRouter } from "./doctor.routes.js";
 import { authRouter } from "./auth.routes.js";
-<<<<<<< HEAD:src/routes/routes.js
-=======
 import { especialidadRoutes } from "./especialidad.routes.js";
->>>>>>> develop-romero-ezequiel:server/src/routes/routes.js
 
 const router = express();
  
