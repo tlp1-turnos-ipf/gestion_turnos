@@ -3,21 +3,21 @@ import React from "react"
 const Turnos_completo = () => {
   return(
     <>
-    <section class="w-100" style={{backgroundColor: 'rgb(240, 240, 240)'}}>
+    <section className="w-100" style={{backgroundColor: 'rgb(240, 240, 240)'}}>
   <div
-    class="p-5 fs-5 text-white fw-bold"
-    style="height: 1px; background: rgb(0, 4, 41)"
+    className="p-5 fs-5 text-white fw-bold"
+    style={{height: "1px", background: "rgb(0, 4, 41)"}}
   >
     Turnos Vigentes
   </div>
 
   <div
-    class="my-3 shadow p-3 m-5 bg-body rounded border d-flex justify-content-between"
+    className="my-3 shadow p-3 m-5 bg-body rounded border d-flex justify-content-between"
   >
-    <a href="/paciente" class="btn btn-success text-light">Volver</a>
+    <a href="/paciente" className="btn btn-success text-light">Volver</a>
     <form action="#" method="POST">
-      <div class="d-flex">
-        <select name="filtro" id="filtro" class="btn btn-secondary">
+      <div className="d-flex">
+        <select name="filtro" id="filtro" className="btn btn-secondary">
           <option value="dni">DNI</option>
           <option value="telefono">Telefono</option>
         </select>
@@ -25,17 +25,17 @@ const Turnos_completo = () => {
           type="text"
           id="valor"
           name="valor"
-          class="form-control"
+          className="form-control"
           required
         />
-        <button type="submit" class="btn btn-primary">Filtrar</button>
+        <button type="submit" className="btn btn-primary">Filtrar</button>
       </div>
     </form>
   </div>
 
-  <div class="main-table shadow m-5 bg-body rounded border">
-    <table class="table table-striped rounded text-center">
-      <thead class="table-dark">
+  <div className="main-table shadow m-5 bg-body rounded border">
+    <table className="table table-striped rounded text-center">
+      <thead className="table-dark">
         <tr>
           <th scope="col">Doctor</th>
           <th scope="col">Especialidad</th>
@@ -45,7 +45,7 @@ const Turnos_completo = () => {
         </tr>
       </thead>
       <tbody
-        class="d-flex-reverse align-items-center justify-content-center"
+        className="d-flex-reverse align-items-center justify-content-center"
         id="listaTurnos"
         data-id="<%= idUser %>"
       ></tbody>

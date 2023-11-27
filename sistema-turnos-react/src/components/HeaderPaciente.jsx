@@ -1,8 +1,11 @@
 import React from 'react';
 
-const Header_doctor = () => {
+const HeaderPaciente = () => {
+  const toggleMenu = () => {
+  };
+
   return (
-    <body style={{ backgroundColor: 'rgb(238, 241, 255)' }}>
+    <div style={{ backgroundColor: 'rgb(238, 241, 255)' }} className="pb-1">
       <button className="burger" type="button" onClick={toggleMenu}>
         <i className="fa-solid fa-bars"></i>
         <i className="fa-solid fa-close"></i>
@@ -12,7 +15,7 @@ const Header_doctor = () => {
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item py-3">
             <a
-              href="/doctor"
+              href="/paciente"
               className="d-flex align-items-center text-white text-decoration-none border-bottom py-2"
             >
               <img
@@ -25,7 +28,7 @@ const Header_doctor = () => {
           </li>
           <li className="nav-item py-1">
             <a
-              href="/doctor/turnos/dia"
+              href="/paciente/turnos/dia"
               className="nav-link text-white"
               aria-current="page"
             >
@@ -35,7 +38,7 @@ const Header_doctor = () => {
           </li>
           <li className="nav-item py-1">
             <a
-              href="/doctor/turnos/completo"
+              href="/paciente/turnos/completo"
               className="nav-link text-white"
               aria-current="page"
             >
@@ -43,8 +46,20 @@ const Header_doctor = () => {
               Todos los turnos
             </a>
           </li>
+          <li className="nav-item py-1">
+            <a
+              href="/paciente/historial"
+              className="nav-link text-white"
+              aria-current="page"
+            >
+              <i className="fa fa-user-md mx-1" aria-hidden="true"></i>
+              Devoluciones
+            </a>
+          </li>
           <li className="nav-item text-center">
-            <a href="/" className="text-white btn btn-primary">Cerrar Sesión</a>
+            <a href="/" className="text-white btn btn-primary">
+              Cerrar Sesion
+            </a>
           </li>
         </ul>
       </aside>
@@ -55,7 +70,7 @@ const Header_doctor = () => {
             className="responsive"
             style={{
               background:
-                'linear-gradient(100deg, rgba(4, 0, 61, 0.945) 70%, rgba(0, 0, 138, 0.9)',
+                'linear-gradient(100deg, rgba(4, 0, 61, 0.945), 70%, rgba(0, 0, 138, 0.9))',
             }}
           >
             <div
@@ -63,7 +78,7 @@ const Header_doctor = () => {
               style={{ width: '240px', height: '100vh', display: 'none' }}
             >
               <a
-                href="/doctor"
+                href="/paciente"
                 className="d-flex align-items-center text-white text-decoration-none border-bottom py-2"
               >
                 <img
@@ -77,7 +92,7 @@ const Header_doctor = () => {
               <ul className="nav nav-pills flex-column mb-auto">
                 <li className="nav-item py-1">
                   <a
-                    href="/doctor/turnos/dia"
+                    href="/paciente/turnos/dia"
                     className="nav-link text-white"
                     aria-current="page"
                   >
@@ -87,25 +102,39 @@ const Header_doctor = () => {
                 </li>
                 <li className="nav-item py-1">
                   <a
-                    href="/doctor/turnos/completo"
+                    href="/paciente/turnos/completo"
                     className="nav-link text-white"
                     aria-current="page"
                   >
-                    <i className="fa fa-wheelchair-alt mx-1" aria-hidden="true"></i>
+                    <i
+                      className="fa fa-wheelchair-alt mx-1"
+                      aria-hidden="true"
+                    ></i>
                     Todos los turnos
                   </a>
                 </li>
-
+                <li className="nav-item py-1">
+                  <a
+                    href="/paciente/historial"
+                    className="nav-link text-white"
+                    aria-current="page"
+                  >
+                    <i className="fa fa-user-md mx-1" aria-hidden="true"></i>
+                    Devoluciones
+                  </a>
+                </li>
                 <li className="nav-item text-center">
-                  <a href="/" className="text-white btn btn-primary">Cerrar Sesión</a>
+                  <a href="/" className="text-white btn btn-primary">
+                    Cerrar Sesion
+                  </a>
                 </li>
               </ul>
             </div>
           </nav>
         </div>
       </main>
-    </body>
+    </div>
   );
 };
 
-export default Header_doctor;
+export default HeaderPaciente;

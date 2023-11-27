@@ -1,6 +1,7 @@
 import React from "react"
 
-const Historial_devoluciones = () => {
+
+const HistorialDevoluciones = () => {
   return(
     <>
     <section className="w-100" style={{backgroundColor: 'rgb(240, 240, 240)'}}>
@@ -50,6 +51,7 @@ const Historial_devoluciones = () => {
       ></tbody>
     </table>
   </div>
+  
 </section>
 
 <script src="/js/pantalla_principal.js"></script>
@@ -59,9 +61,7 @@ const Historial_devoluciones = () => {
   )
 }
 
-export default Historial_devoluciones
+export default HistorialDevoluciones
 // <%- include("../partials/header_paciente.ejs") -%>
-
-
 
 // <%- include("../partials/admin/footer_admin.ejs") -%>
