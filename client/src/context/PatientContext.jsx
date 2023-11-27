@@ -35,6 +35,7 @@ export const ContextPatient = ({ children }) => {
       payload: id,
     });
   };
+
   const createPatients = (data) => {
     dispatchPatient({
       type: typeList.LIST_ADD,

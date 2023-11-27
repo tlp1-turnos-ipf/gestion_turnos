@@ -24,6 +24,20 @@ export const Dashboard = () => {
         </>
       );
       break;
+    case 3:
+      routeElement = (
+        <>
+          <h1>Paciente</h1>
+        </>
+      );
+      break;
+    case 4:
+      routeElement = (
+        <>
+          <h1>Doctor</h1>
+        </>
+      );
+      break;
 
     default:
       // Manejar cualquier otro caso o mostrar una ruta predeterminada

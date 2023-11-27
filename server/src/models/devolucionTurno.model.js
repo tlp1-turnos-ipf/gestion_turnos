@@ -1,7 +1,6 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
-import {Turno} from "./turno.model.js";
-
+import { Turno } from "./turno.model.js";
 
 export const DevolucionTurno = sequelize.define(
   "Devolucion_Turno",
@@ -25,6 +24,8 @@ export const DevolucionTurno = sequelize.define(
 );
 
 //Realizo la relacion de uno a muchos
-Turno.hasMany(DevolucionTurno, { foreignKey: "turno_id", as: "devolucion_turno" });
+Turno.hasMany(DevolucionTurno, {
+  foreignKey: "turno_id",
+  as: "devolucion_turno",
+});
 DevolucionTurno.belongsTo(Turno, { foreignKey: "turno_id" });
-

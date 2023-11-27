@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { BotonLogout } from "../botons/BotonLogout";
 export const NavBarAdmin = () => {
   return (
     <>
@@ -67,10 +68,9 @@ export const NavBarAdmin = () => {
                 Agregar Doctor
               </a>
             </li>
+
             <li className="nav-item text-center">
-              <a href="/" className="text-white btn btn-primary">
-                Cerrar Sesion
-              </a>
+              <BotonLogout />
             </li>
           </ul>
         </div>
