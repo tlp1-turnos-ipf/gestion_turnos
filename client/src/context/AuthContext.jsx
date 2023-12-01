@@ -2,10 +2,6 @@ import { useReducer, createContext, useEffect } from "react";
 import { authReducer } from "../reducers/authReducers";
 import { typeAuth } from "../types/type";
 
-//HOOK: Funcion que centraliza la lógica de un componente y es reutilizable, descomprime la lógica. Se puede centralizar la lógica
-//HUSTON HOOK
-//El protocolo de socket es ws NO TE OLVIDESS
-
 export const AuthContext = createContext(null);
 
 export const AuthUser = ({ children }) => {
