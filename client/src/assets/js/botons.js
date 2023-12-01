@@ -10,7 +10,7 @@ export const BotonsAdmin = [
     src: "/img/admin/doctores.png",
     width: "160px",
     style: { position: "absolute", top: "-20px", left: "-50px" },
-    to: "/lista_doctores",
+    to: "/doctors",
     title: "Doctores",
   },
   {

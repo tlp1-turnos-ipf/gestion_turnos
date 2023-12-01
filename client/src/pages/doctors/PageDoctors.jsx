@@ -1,13 +1,13 @@
 import { useContext, useEffect } from "react";
-import { AppPatients } from "../../components/AppPatients";
 import { AsideBurgerAdmin } from "../../components/asideBurger/AsideBurgerAdmin";
 import { NavBarAdmin } from "../../components/navBar/NavBarAdmin";
-import { PatientContext } from "../../context/PatientContext";
+import { AppDoctors } from "../../components/AppDoctors";
+import { DoctorContext } from "../../context/DoctorContext";
 
-export const PagePatients = () => {
-  const { fetchData } = useContext(PatientContext);
+export const PageDoctors = () => {
+  const { fetchDataDoctor } = useContext(DoctorContext);
   useEffect(() => {
-    fetchData();
+    fetchDataDoctor();
   }, []);
 
   return (
@@ -16,7 +16,7 @@ export const PagePatients = () => {
       <main className="container-fluid m-0 p-0">
         <div className="d-flex">
           <NavBarAdmin />
-          <AppPatients />
+          <AppDoctors />
         </div>
       </main>
     </>

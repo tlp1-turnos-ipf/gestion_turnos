@@ -27,14 +27,26 @@ export const Dashboard = () => {
     case 3:
       routeElement = (
         <>
-          <h1>Paciente</h1>
+          <AsideBurgerAdmin />
+          <main className="container-fluid m-0 p-0">
+            <div className="d-flex">
+              <NavBarAdmin />
+              <h1>Pantalla de Pacientes</h1>
+            </div>
+          </main>
         </>
       );
       break;
     case 4:
       routeElement = (
         <>
-          <h1>Doctor</h1>
+          <AsideBurgerAdmin />
+          <main className="container-fluid m-0 p-0">
+            <div className="d-flex">
+              <NavBarAdmin />
+              <h1>Pantalla de Doctores</h1>
+            </div>
+          </main>
         </>
       );
       break;

@@ -29,24 +29,24 @@ export const NavBarAdmin = () => {
           <hr />
           <ul className="nav nav-pills flex-column mb-auto">
             <li className="nav-item py-1">
-              <a
-                href="/lista_pacientes_completos"
+              <Link
+                to="/patients"
                 className="nav-link text-white"
                 aria-current="page"
               >
                 <i className="fa fa-wheelchair mx-1" aria-hidden="true" />
                 Lista de Pacientes
-              </a>
+              </Link>
             </li>
             <li className="nav-item py-1">
-              <a
-                href="/crear_paciente"
+              <Link
+                to="/patients/create"
                 className="nav-link text-white"
                 aria-current="page"
               >
                 <i className="fa fa-wheelchair-alt mx-1" aria-hidden="true" />
                 Agregar Paciente
-              </a>
+              </Link>
             </li>
             <li className="nav-item py-1">
               <a
