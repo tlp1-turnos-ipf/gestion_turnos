@@ -73,16 +73,6 @@ export const ListPatients = () => {
                   >
                     Eliminar
                   </button>
-                  <button
-                    onClick={() =>
-                      navigate(
-                        "/patients/edit/" + patient.Usuario.Persona.persona_id
-                      )
-                    }
-                    className="btn btn-warning btn-sm"
-                  >
-                    Editar
-                  </button>
                 </td>
               </tr>
             ))
