@@ -20,11 +20,4 @@ export const BotonsAdmin = [
     to: "/especiality",
     title: "Especialidad",
   },
-  {
-    src: "/img/admin/turnos.png",
-    width: "80px",
-    style: { position: "absolute", top: "-10px", left: 6 },
-    to: "/lista_turnos",
-    title: "Turnos",
-  },
 ];

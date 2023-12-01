@@ -37,19 +37,6 @@ export const Dashboard = () => {
         </>
       );
       break;
-    case 4:
-      routeElement = (
-        <>
-          <AsideBurgerAdmin />
-          <main className="container-fluid m-0 p-0">
-            <div className="d-flex">
-              <NavBarAdmin />
-              <h1>Pantalla de Doctores</h1>
-            </div>
-          </main>
-        </>
-      );
-      break;
 
     default:
       // Manejar cualquier otro caso o mostrar una ruta predeterminada

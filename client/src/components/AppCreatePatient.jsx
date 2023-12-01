@@ -63,7 +63,7 @@ export const AppCreatePatient = () => {
           <div className="m-2 fw-bold d-flex justify-content-center border-bottom">
             <p className="fs-5">
               <img src="/img/inicio_sesion/logo.png" alt="" width="30px" />
-              Agregar Paciente
+              Agregar Registro
             </p>
           </div>
           <div className="d-flex flex-wrap justify-content-center">

@@ -49,24 +49,24 @@ export const NavBarAdmin = () => {
               </Link>
             </li>
             <li className="nav-item py-1">
-              <a
-                href="/lista_doctores_completo"
+              <Link
+                to="/doctors"
                 className="nav-link text-white"
                 aria-current="page"
               >
                 <i className="fa fa-user-md mx-1" aria-hidden="true" />
                 Lista de Doctores
-              </a>
+              </Link>
             </li>
             <li className="nav-item py-1">
-              <a
-                href="/crear_doctor"
+              <Link
+                to="/patients/create"
                 className="nav-link text-white"
                 aria-current="page"
               >
-                <i className="fa fa-stethoscope mx-1" aria-hidden="true" />
+                <i className="fa fa-wheelchair-alt mx-1" aria-hidden="true" />
                 Agregar Doctor
-              </a>
+              </Link>
             </li>
 
             <li className="nav-item text-center">

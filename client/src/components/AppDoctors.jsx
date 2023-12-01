@@ -11,7 +11,7 @@ export const AppDoctors = () => {
     >
       <User />
       <div className="my-3 shadow p-3 m-5 bg-body rounded border d-flex flex-wrap justify-content-between">
-        <AddBoton route={"/doctors/create"}>Agregar Doctor</AddBoton>
+        <AddBoton route={"/patients/create"}>Agregar Doctor</AddBoton>
         <FilterDoctor />
       </div>
       <ListDoctors />
