@@ -86,7 +86,18 @@ export const ctrlDeleteEspecialidad = async (req, res) => {
   try {
     const esp = await Especialidad.findByPk(req.params.id);
 
-    const deleteEspecialidad = await Especialidad.destroy(esp);
+    // Verifica si la especialidad existe antes de intentar eliminarla
+    if (!esp) {
+      throw {
+        status: 404,
+        message: "No se encontró la especialidad",
+      };
+    }
+
+    // Utiliza destroy con el objeto where
+    const deleteEspecialidad = await Especialidad.destroy({
+      where: { especialidad_id: req.params.id },
+    });
 
     if (!deleteEspecialidad) {
       throw {
@@ -101,6 +112,6 @@ export const ctrlDeleteEspecialidad = async (req, res) => {
     });
   } catch (error) {
     console.log("error: " + error.message);
-    res.status(500).json({ message: "Error del servidor" });
+    res.status(error.status || 500).json({ message: error.message || "Error del servidor" });
   }
 };

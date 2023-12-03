@@ -8,5 +8,6 @@ export const typeList = {
   LIST_ADD: "LIST_ADD",
   LIST_UPDATE: "LIST_UPDATE",
   LIST_DONE: "LIST_DONE",
+  LIST_DELETE: "LIST_DELETE",
   LIST_FIND_ONE: "LIST_FIND_ONE",
 };

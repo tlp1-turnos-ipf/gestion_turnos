@@ -55,8 +55,8 @@ export const ListEspeciality = () => {
               <td colSpan={3}>No hay Especialidades</td>
             </tr>
           ) : (
-            especialities.map((especiality) => (
-              <tr key={especiality.especialidad_id}>
+            especialities.map((especiality, index) => (
+              <tr key={index}>
                 <td>{especiality.descripcion_especialidad}</td>
 
                 <td>
