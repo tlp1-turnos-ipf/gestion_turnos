@@ -5,6 +5,7 @@ import { PageCreatePatients } from "../pages/Patients/PageCreatePatients";
 import { PageEditPatient } from "../pages/Patients/PageEditPatient";
 import { PageEspecility } from "../pages/PageEspecility";
 import { PageCreateEspeciality } from "../pages/PageCreateEspeciality";
+import { PageCreateDoctor } from "../pages/doctors/PageCreateDoctor";
 
 export const AdminRoutes = () => {
   return (
@@ -12,6 +13,7 @@ export const AdminRoutes = () => {
       <Route path="/patients" element={<PagePatients />} />
       <Route path="/doctors" element={<PageDoctors />} />
       <Route path="/patients/create" element={<PageCreatePatients />} />
+      <Route path="/doctors/create" element={<PageCreateDoctor />} />
       <Route path="/patients/edit/:id" element={<PageEditPatient />} />
       <Route path="/especiality" element={<PageEspecility />} />
       <Route path="/especiality/create" element={<PageCreateEspeciality />} />

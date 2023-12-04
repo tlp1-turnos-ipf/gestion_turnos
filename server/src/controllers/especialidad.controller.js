@@ -12,7 +12,7 @@ export const ctrlGetAllEspecialidad = async (req, res) => {
       };
     }
 
-    res.status(200).json(Especialidades);
+    return res.status(200).json(Especialidades);
   } catch (error) {
     console.log("error: " + error.message);
     res.status(500).json({ message: "Error del servidor" });
